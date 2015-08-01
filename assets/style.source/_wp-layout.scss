@@ -1,20 +1,48 @@
+
+#masthead,
+#content,
+#colophon {
+	padding: 0 10px;
+}
+
+.inner.for-masthead,
+.inner.for-content,
+.inner.for-colophon {
+
+	@include container($bp-xs-cols);
+
+	@media screen and (min-width: $bp-sm-min) {
+		@include container($bp-sm-cols);
+	}
+	@media screen and (min-width: $bp-md-min) {
+		@include container($bp-md-cols);
+	}
+	@media screen and (min-width: $bp-lg-min) {
+		@include container($bp-lg-cols);
+	}
+	@media screen and (min-width: $bp-xl-min) {
+		@include container($bp-xl-cols);
+	}
+
+}
+
 .content-area {
-	float: left;
-	margin: 0 (-$size__site-sidebar) 0 0;
-	width: $size__site-main;
+// 	float: left;
+// 	margin: 0 (-$layout-site-sidebar) 0 0;
+// 	width: $layout-site-main;
 }
 
 .site-main {
-	margin: 0 $size__site-sidebar 0 0;
+// 	margin: 0 $layout-site-sidebar 0 0;
 }
 
 .site-content .widget-area {
-	float: right;
-	overflow: hidden;
-	width: $size__site-sidebar;
+// 	float: right;
+// 	overflow: hidden;
+// 	width: $layout-site-sidebar;
 }
 
 .site-footer {
-	clear: both;
-	width: $size__site-main;
+// 	clear: both;
+// 	width: $layout-site-main;
 }

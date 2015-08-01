@@ -1,39 +1,58 @@
 
 // Colors
 // ======
-$color__background-body: #fff;
-$color__background-screen: #f1f1f1;
-$color__background-hr: #ccc;
-$color__background-button: #e6e6e6;
-$color__background-pre: #eee;
-$color__background-ins: #fff9c0;
+$color-background-body: #fff;
+$color-background-screen: #f1f1f1;
+$color-background-hr: #ccc;
+$color-background-button: #e6e6e6;
+$color-background-pre: #eee;
+$color-background-ins: #fff9c0;
 
-$color__text-screen: #21759b;
-$color__text-input: #666;
-$color__text-input-focus: #111;
-$color__link: royalblue;
-$color__link-visited: purple;
-$color__link-hover: midnightblue;
-$color__text-main: #404040;
+$color-text-screen: #21759b;
+$color-text-input: #666;
+$color-text-input-focus: #111;
+$color-link: royalblue;
+$color-link-visited: purple;
+$color-link-hover: midnightblue;
+$color-text-main: #404040;
 
-$color__border-button: #ccc #ccc #bbb;
-$color__border-button-hover: #ccc #bbb #aaa;
-$color__border-button-focus: #aaa #bbb #bbb;
-$color__border-input: #ccc;
-$color__border-abbr: #666;
+$color-border-button: #ccc #ccc #bbb;
+$color-border-button-hover: #ccc #bbb #aaa;
+$color-border-button-focus: #aaa #bbb #bbb;
+$color-border-input: #ccc;
+$color-border-abbr: #666;
 
 // Typography
 // ==========
-$font__main: sans-serif;
-$font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-$font__pre: "Courier 10 Pitch", Courier, monospace;
-$font__line-height-body: 1.5;
-$font__line-height-pre: 1.6;
+$font-main: sans-serif;
+$font-code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$font-pre: "Courier 10 Pitch", Courier, monospace;
+$font-line-height-body: 1.5;
+$font-line-height-pre: 1.6;
 
-// Structure
-// =========
-$size__site-main: 100%;
-$size__site-sidebar: 25%;
+// Dimensions
+// ==========
+$layout-width-max: 1140px;
+
+// Breakpoints, qty of columns at each.
+$bp-xs-cols: 1;
+$bp-xs-max: 479px;
+
+$bp-sm-cols: 2;
+$bp-sm-min: $bp-xs-max + 1;
+$bp-sm-max: 767px;
+
+$bp-md-cols: 3;
+$bp-md-min: $bp-sm-max + 1;
+$bp-md-max: 991px;
+
+$bp-lg-cols: 6;
+$bp-lg-min: $bp-md-max + 1;
+$bp-lg-max: 1119px;
+
+$bp-xl-cols: 9;
+$bp-xl-min: $bp-lg-max + 1;
+
 
 // Layout (Susy)
 // =============
@@ -42,15 +61,15 @@ $susy: (
   math: fluid,
   output: float,
   gutter-position: after,
-  container: auto,
+  container: $layout-width-max,
   container-position: center,
-  columns: 4,
-  gutters: .25,
+  columns: $bp-xl-cols, // use cols from largest size
+  gutters: .15,
   column-width: false,
-  global-box-sizing: content-box,
+  global-box-sizing: border-box,
   last-flow: to,
   debug: (
-    image: hide,
+    image: show, // *** "show" or "hide" grid visualization ***
     color: rgba(#66f, .25),
     output: background,
     toggle: top right,

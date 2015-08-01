@@ -9,14 +9,17 @@
 
 ?>
 
+		</div><!-- /.inner.for-content -->
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'strtr' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'strtr' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'strtr' ), 'strtr', '<a href="http://kamm.co" rel="designer">Andrew Kamm</a>' ); ?>
-		</div><!-- .site-info -->
+		<div class="inner for-colophon">
+			<div class="site-info">
+
+				<!-- ... -->
+
+			</div><!-- .site-info -->
+		</div><!-- /.inner.for-colophon -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

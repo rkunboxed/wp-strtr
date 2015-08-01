@@ -2,16 +2,16 @@ a {
 
 	&,
 	&:link {
-		color: $color__link;
+		color: $color-link;
 	}
 
 	&:visited {
-		color: $color__link-visited;
+		color: $color-link-visited;
 	}
 	&:hover,
 	&:active,
 	&:focus {
-		color: $color__link-hover;
+		color: $color-link-hover;
 	}
 	&:focus {
 		outline: thin dotted;
@@ -27,10 +27,10 @@ button,
 input,
 select,
 textarea {
-	color: $color__text-main;
-	font-family: $font__main;
+	color: $color-text-main;
+	font-family: $font-main;
 	@include font-size(1);
-	line-height: $font__line-height-body;
+	line-height: $font-line-height-body;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -54,10 +54,10 @@ address {
 }
 
 pre {
-	background: $color__background-pre;
-	font-family: $font__pre;
+	background: $color-background-pre;
+	font-family: $font-pre;
 	@include font-size(0.9375);
-	line-height: $font__line-height-pre;
+	line-height: $font-line-height-pre;
 	margin-bottom: 1.6em;
 	max-width: 100%;
 	overflow: auto;
@@ -65,17 +65,17 @@ pre {
 }
 
 code, kbd, tt, var {
-	font-family: $font__code;
+	font-family: $font-code;
 	@include font-size(0.9375);
 }
 
 abbr, acronym {
-	border-bottom: 1px dotted $color__border-abbr;
+	border-bottom: 1px dotted $color-border-abbr;
 	cursor: help;
 }
 
 mark, ins {
-	background: $color__background-ins;
+	background: $color-background-ins;
 	text-decoration: none;
 }
 
@@ -88,9 +88,9 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	border: 1px solid;
-	border-color: $color__border-button;
+	border-color: $color-border-button;
 	border-radius: 3px;
-	background: $color__background-button;
+	background: $color-background-button;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
 	color: rgba(0, 0, 0, .8);
 	@include font-size(0.75);
@@ -99,13 +99,13 @@ input[type="submit"] {
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 
 	&:hover {
-		border-color: $color__border-button-hover;
+		border-color: $color-border-button-hover;
 		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
 	}
 
 	&:active,
 	&:focus {
-		border-color: $color__border-button-focus;
+		border-color: $color-border-button-focus;
 		box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
 	}
 }
@@ -116,12 +116,12 @@ input[type="url"],
 input[type="password"],
 input[type="search"],
 textarea {
-	color: $color__text-input;
-	border: 1px solid $color__border-input;
+	color: $color-text-input;
+	border: 1px solid $color-border-input;
 	border-radius: 3px;
 
 	&:focus {
-		color: $color__text-input-focus;
+		color: $color-text-input-focus;
 	}
 }
 
