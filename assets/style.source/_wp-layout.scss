@@ -2,47 +2,58 @@
 #masthead,
 #content,
 #colophon {
-	padding: 0 10px;
+	padding: 0 $horizontal-unit;
 }
 
 .inner.for-masthead,
 .inner.for-content,
 .inner.for-colophon {
 
-	@include container($bp-xs-cols);
+	@include container(1);
+	margin-bottom: $vertical-unit;
 
 	@media screen and (min-width: $bp-sm-min) {
-		@include container($bp-sm-cols);
+		@include container(2);
 	}
 	@media screen and (min-width: $bp-md-min) {
-		@include container($bp-md-cols);
+		@include container(3);
 	}
 	@media screen and (min-width: $bp-lg-min) {
-		@include container($bp-lg-cols);
+		@include container(6);
 	}
 	@media screen and (min-width: $bp-xl-min) {
-		@include container($bp-xl-cols);
+		@include container(9);
 	}
 
 }
 
 .content-area {
-// 	float: left;
-// 	margin: 0 (-$layout-site-sidebar) 0 0;
-// 	width: $layout-site-main;
-}
 
-.site-main {
-// 	margin: 0 $layout-site-sidebar 0 0;
+	@include span(full);
+
+	@media screen and (min-width: $bp-md-min) {
+		@include span(first 2 of 3);
+	}
+	@media screen and (min-width: $bp-lg-min) {
+		@include span(first 4 of 6);
+	}
+	@media screen and (min-width: $bp-xl-min) {
+		@include span(first 6 of 9);
+	}
 }
 
 .site-content .widget-area {
-// 	float: right;
-// 	overflow: hidden;
-// 	width: $layout-site-sidebar;
+
+	@include span(full);
+
+	@media screen and (min-width: $bp-md-min) {
+		@include span(last 1 of 3);
+	}
+	@media screen and (min-width: $bp-lg-min) {
+		@include span(last 2 of 6);
+	}
+	@media screen and (min-width: $bp-xl-min) {
+		@include span(last 3 of 9);
+	}
 }
 
-.site-footer {
-// 	clear: both;
-// 	width: $layout-site-main;
-}

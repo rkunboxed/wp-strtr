@@ -15,14 +15,14 @@
 		clip: auto !important;
 		color: $color-text-screen;
 		display: block;
-		@include font-size(0.875);
+		font-size: $font-size-base * 0.875;
 		font-weight: bold;
 		height: auto;
-		left: 5px;
+		left: $horizontal-unit * 0.5;
 		line-height: normal;
-		padding: 15px 23px 14px;
+		padding: $vertical-unit $horizontal-unit;
 		text-decoration: none;
-		top: 5px;
+		top: $vertical-unit * 0.5;
 		width: auto;
 		z-index: 100000; /* Above WP toolbar. */
 	}
@@ -31,13 +31,13 @@
 .alignleft {
 	display: inline;
 	float: left;
-	margin-right: 1.5em;
+	margin-right: $horizontal-unit * 2;
 }
 
 .alignright {
 	display: inline;
 	float: right;
-	margin-left: 1.5em;
+	margin-left: $horizontal-unit * 2;
 }
 
 .aligncenter {

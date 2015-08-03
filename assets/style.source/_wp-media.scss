@@ -8,7 +8,7 @@
 }
 
 .wp-caption {
-	margin-bottom: 1.5em;
+	margin-bottom: $vertical-unit;
 	max-width: 100%;
 
 	img[class*="wp-image-"] {
@@ -16,7 +16,7 @@
 	}
 
 	.wp-caption-text {
-		margin: 0.8075em 0;
+		margin: ($vertical-unit * 0.5) 0;
 	}
 }
 
@@ -25,7 +25,7 @@
 }
 
 .gallery {
-	margin-bottom: 1.5em;
+	margin-bottom: $vertical-unit;
 }
 
 .gallery-item {

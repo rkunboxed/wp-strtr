@@ -14,7 +14,7 @@
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 			float: left;
 			position: absolute;
-			top: 1.5em;
+			top: $vertical-unit;
 			left: -999em;
 			z-index: 99999;
 
@@ -50,11 +50,16 @@
 	}
 	li {
 		float: left;
+		margin-right: $horizontal-unit;
 		position: relative;
+		&:last-of-type {
+			margin-right: 0;
+		}
 
 		&:hover > a,
 		&.focus > a {
 		}
+
 	}
 	a {
 		display: block;
@@ -73,7 +78,7 @@
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: $bp-sm-min) {
 	.menu-toggle {
 		display: none;
 	}
@@ -87,7 +92,7 @@
 .post-navigation {
 
 	.site-main & {
-		margin: 0 0 1.5em;
+		margin: 0 0 $vertical-unit;
 		overflow: hidden;
 	}
 

@@ -22,37 +22,47 @@ $color-border-button-focus: #aaa #bbb #bbb;
 $color-border-input: #ccc;
 $color-border-abbr: #666;
 
-// Typography
-// ==========
+// Typography and vertical rhythm.
+// ===============================
 $font-main: sans-serif;
 $font-code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font-pre: "Courier 10 Pitch", Courier, monospace;
-$font-line-height-body: 1.5;
-$font-line-height-pre: 1.6;
+
+// Set the vertical unit to a value that is smaller than
+// your target $line-height-base value (below) and can
+// be multiplied by a value such as 1.25 (included fractional
+// values should be .25, .5 or .75 so they can quickly
+// sync back up w/the line height.
+$vertical-unit: 16px;
+
+$font-size-base: 18px;
+
+// Use're using same unit of measure (px) for font size
+// and line-height (not a line-height that's relative to
+// font-size) so vertical rhythm is possible.
+$line-height-base: $vertical-unit * 1.5;
 
 // Dimensions
 // ==========
 $layout-width-max: 1140px;
 
-// Breakpoints, qty of columns at each.
-$bp-xs-cols: 1;
+// Somewhat arbitrary horizontal unit. Not used in Susy
+// configuration, but will be more consistent than using ems.
+$horizontal-unit: 16px;
+
+// Breakpoints.
 $bp-xs-max: 479px;
 
-$bp-sm-cols: 2;
 $bp-sm-min: $bp-xs-max + 1;
 $bp-sm-max: 767px;
 
-$bp-md-cols: 3;
 $bp-md-min: $bp-sm-max + 1;
 $bp-md-max: 991px;
 
-$bp-lg-cols: 6;
 $bp-lg-min: $bp-md-max + 1;
 $bp-lg-max: 1119px;
 
-$bp-xl-cols: 9;
 $bp-xl-min: $bp-lg-max + 1;
-
 
 // Layout (Susy)
 // =============
@@ -63,8 +73,8 @@ $susy: (
   gutter-position: after,
   container: $layout-width-max,
   container-position: center,
-  columns: $bp-xl-cols, // use cols from largest size
-  gutters: .15,
+  columns: 9, // use cols for largest size
+  gutters: .1,
   column-width: false,
   global-box-sizing: border-box,
   last-flow: to,
@@ -79,6 +89,6 @@ $susy: (
     background-options: false,
     box-sizing: true,
     clearfix: false,
-    rem: true,
+    rem: false,
   )
 );
