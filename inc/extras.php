@@ -43,6 +43,49 @@ function strtr_get_attachment_image_at_size( $attachment_id, $size = null ) {
 }
 
 /**
+ * Get detailed information about all available image sizes.
+ *
+ * Adapted from example code at http://j.mp/1wvllzF.
+ *
+ * @param str $size A single size to return information about.
+ * @return array
+ *  Returns an array of info about all image sizes or just
+ *  $size if it is provided.
+ */
+function strtr_get_image_sizes( $size = null ) {
+	global $_wp_additional_image_sizes;
+
+	$sizes = array();
+	$get_intermediate_image_sizes = get_intermediate_image_sizes();
+
+	// Create the full array with sizes and crop info
+	foreach( $get_intermediate_image_sizes as $_size ) {
+		if ( in_array( $_size, array( 'thumbnail', 'medium', 'large' ) ) ) {
+			$sizes[ $_size ]['width'] = get_option( $_size . '_size_w' );
+			$sizes[ $_size ]['height'] = get_option( $_size . '_size_h' );
+			$sizes[ $_size ]['crop'] = (bool) get_option( $_size . '_crop' );
+		} elseif ( isset( $_wp_additional_image_sizes[ $_size ] ) ) {
+			$sizes[ $_size ] = array(
+				'width' => $_wp_additional_image_sizes[ $_size ]['width'],
+				'height' => $_wp_additional_image_sizes[ $_size ]['height'],
+				'crop' =>  $_wp_additional_image_sizes[ $_size ]['crop']
+			);
+		}
+	}
+
+	// Get only 1 size if found
+	if ( $size ) {
+		if ( isset( $sizes[ $size ] ) ) {
+			return $sizes[ $size ];
+		} else {
+			return false;
+		}
+	}
+	return $sizes;
+}
+
+
+/**
  * Adds custom classes to the array of body classes.
  *
  * @param array $classes Classes for the body element.
