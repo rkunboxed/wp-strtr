@@ -11,15 +11,21 @@
 		padding-left: 0;
 
 		ul {
+			background-color: rgba(255, 255, 255, 0.8);
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 			float: left;
-			position: absolute;
-			top: $vertical-unit;
+			font-size: 0.875em;
 			left: -999em;
+			line-height: $vertical-unit;
+			padding-top: $vertical-unit/2;
+			position: absolute;
+			top: $vertical-unit * 1.5;
 			z-index: 99999;
 
 			ul {
+				font-size: 1em; // prevent compounding
 				left: -999em;
+				padding-top: 0; // don't want to push this level (3rd) down
 				top: 0;
 			}
 
@@ -30,7 +36,8 @@
 				}
 			}
 
-			a {
+			a { // second level and beyond.
+				padding: $vertical-unit/4 $horizontal-unit/2;
 				width: 200px;
 			}
 
@@ -54,6 +61,10 @@
 		position: relative;
 		&:last-of-type {
 			margin-right: 0;
+		}
+		li {
+			margin-right: 0;
+			padding: 0;
 		}
 
 		&:hover > a,

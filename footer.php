@@ -16,7 +16,7 @@
 		<div class="inner for-colophon">
 			<div class="site-info">
 
-				<!-- ... -->
+				<div><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'strtr' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'strtr' ), 'WordPress' ); ?></a></div>
 
 			</div><!-- .site-info -->
 		</div><!-- /.inner.for-colophon -->
