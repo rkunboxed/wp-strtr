@@ -79,7 +79,7 @@ $susy: (
   global-box-sizing: border-box,
   last-flow: to,
   debug: (
-    image: show, // *** "show" or "hide" grid visualization ***
+    image: hide, // *** one of "show" or "hide" to view grid visualization ***
     color: rgba(#66f, .25),
     output: background,
     toggle: top right,
