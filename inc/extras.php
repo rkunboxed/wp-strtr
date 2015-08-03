@@ -2,10 +2,45 @@
 /**
  * Custom functions that act independently of the theme templates
  *
- * Eventually, some of the functionality here could be replaced by core features
- *
  * @package strtr
  */
+
+/**
+ * Get a post's featured image at a specified size.
+ *
+ * @see strtr_get_attachment_image_at_size()
+ *
+ * @param int $post_id ID of post.
+ * @param str $size
+ * @return str|null
+ */
+function strtr_get_featured_image_at_size( $post_id, $size = null ) {
+	$img_id = get_post_thumbnail_id( $post_id );
+	return strtr_get_attachment_image_at_size( $img_id, $size );
+}
+
+/**
+ * Get an attachment image URL at a specified size.
+ *
+ * @param int $attachment_id ID of attachment.
+ * @param str $size
+ * @return str|null
+ */
+function strtr_get_attachment_image_at_size( $attachment_id, $size = null ) {
+
+	if ( ! $attachment_id || ! is_numeric( $attachment_id ) ) {
+		return null;
+	}
+
+	$size = ( $size ) ? $size : 'large'; // default to WP's 'large' if no size specified.
+
+	$img_url = null;
+	$img = wp_get_attachment_image_src( $attachment_id, $size );
+	if ( $img && ! empty( $img[0] ) ) {
+		$img_url = $img[0];
+	}
+	return $img_url;
+}
 
 /**
  * Adds custom classes to the array of body classes.
