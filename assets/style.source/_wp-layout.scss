@@ -38,7 +38,7 @@
 		@include span(first 4 of 6);
 	}
 	@media screen and (min-width: $bp-xl-min) {
-		@include span(first 6 of 9);
+		@include span(first 5 of 9);
 	}
 }
 
