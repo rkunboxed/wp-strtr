@@ -10,7 +10,7 @@
 @import "mixins-custom";      // mixins custom for this project
 
 // Now the rest of the style partials, from generic to specific.
-@import "normalize";
+@import "lib/normalize";      // normalize (to remain unmodified)
 @import "semantic";           // custom semantic markup styles
 @import "wp-utilities";       // wp utility classes
 @import "wp-layout";          // site layout, dimensions
